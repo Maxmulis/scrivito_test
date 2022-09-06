@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScrivitoImportmaps</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_importmap_tags %>
+    <%= scrivito_head_tags %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <%= scrivito_body_tags %>
+  </body>
+</html>
