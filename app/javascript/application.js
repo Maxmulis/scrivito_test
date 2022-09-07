@@ -3,4 +3,4 @@
 // import "controllers"
 //= require jquery
 //= require scrivito
-console.log("hello from application.js")
+//= require bootstrap-sprockets

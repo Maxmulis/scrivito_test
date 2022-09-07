@@ -67,3 +67,5 @@ group :test do
 end
 
 gem "scrivito", "~> 1.18"
+gem 'sassc-rails'
+gem "bootstrap-sass", "~> 3.3.5"

@@ -1,17 +1,2 @@
-<div>
-  <p><%= link_to 'Home', scrivito_path(Obj.root) %></p>
-
-  <%= scrivito_tag_list :ul, Obj.root, :toclist do |list, page| %>
-    <%= list.tag :li do %>
-      <%= link_to page.display_title, scrivito_path(page) %>
-    <% end %>
-  <% end %>
-
-  <% if Obj.root.toclist.empty? && scrivito_in_editable_view? %>
-    <p>(Hint: To create a subpage, click on the blue navigation icon to the right.)</p>
-  <% end %>
-</div>
-
-
 <%= scrivito_tag :h1, @obj, :title %>
 <%= scrivito_tag :div, @obj, :body %>
