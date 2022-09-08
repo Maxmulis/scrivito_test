@@ -21,7 +21,7 @@
 
         <%= scrivito_tag_list :ul, Obj.root, :toclist, class: "nav navbar-nav" do |list, page| %>
           <%= list.tag :li do %>
-            <%= link_to page.display_title, scrivito_path(page) %>
+            <%= link_to page.display_title, scrivito_path(page) unless page.hidden_from_navigation? %>
           <% end %>
         <% end %>
       </div>
