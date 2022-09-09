@@ -1,0 +1,17 @@
+<%= scrivito_medium_dialog do %>
+  <%= scrivito_details_for "Title" do %>
+    <%= scrivito_tag :div, @obj, :title %>
+  <% end %>
+
+  <%= scrivito_details_for "Tags" do %>
+    <%= scrivito_tag :div, @obj, :tags %>
+  <% end %>
+
+  <%= scrivito_details_for "Hide from Navigation" do %>
+    <%= scrivito_tag :div, @obj, :hide_from_navigation %>
+  <% end %>
+
+  <%= scrivito_details_for "Show page in full screen" do %>
+    <%= scrivito_tag :div, @obj, :full_screen %>
+  <% end %>
+<% end %>
