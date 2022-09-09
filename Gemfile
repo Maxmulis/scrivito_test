@@ -69,3 +69,4 @@ end
 gem "scrivito", "~> 1.18"
 gem 'sassc-rails'
 gem "bootstrap-sass", "~> 3.3.5"
+gem "haml-rails", "~> 2.0"

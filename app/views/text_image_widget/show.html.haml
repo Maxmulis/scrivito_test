@@ -1,0 +1,8 @@
+%div#row
+  %div{class: "col-sm-#{widget.leftcolumn}"}
+    = scrivito_tag :p, widget, :text
+
+  %div{class: "col-sm-#{widget.rightcolumn}"}
+    = scrivito_image_tag widget, :image
+
+    
