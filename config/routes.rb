@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   scrivito_route '/', using: 'homepage'
   scrivito_route '(/)(*slug-):id', using: 'slug_id'
   scrivito_route '/*permalink', using: 'permalink', format: false
+
+  post '/search', to: 'search_page#index', as: 'search'
 end
