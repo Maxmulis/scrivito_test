@@ -1,5 +1,4 @@
--# - raise
-= form_tag(search_path) do
+= form_tag(scrivito_path(@obj), method: :get) do
   %div
     = text_field_tag 'q', @query, placeholder: 'Search'
     = button_tag 'Search', class: 'web_button green'
