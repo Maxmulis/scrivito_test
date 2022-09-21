@@ -1,0 +1,2 @@
+class NewsPageController < CmsController
+end

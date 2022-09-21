@@ -10,4 +10,8 @@ class Obj < Scrivito::BasicObj
   def respond_to_missing?(method, include_private = false)
     method.to_s == 'hidden_from_navigation?' || super
   end
+
+  def slug
+    "test"
+  end
 end
