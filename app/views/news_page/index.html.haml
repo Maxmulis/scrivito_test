@@ -3,5 +3,6 @@
     = link_to child.display_title, scrivito_path(child)
 = scrivito_tag :h1, @obj, :title
 %p "Created at: #{@obj.created_at}"
+%p "Path: #{@obj.path}"
 = scrivito_image_tag @obj, :image
 = scrivito_tag :div, @obj, :body

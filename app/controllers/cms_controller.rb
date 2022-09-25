@@ -6,5 +6,8 @@ class CmsController < ApplicationController
        (@obj.valid_until && @obj.valid_until < Time.current)
   	  render :not_found, status: 404
   	end
+    # not when in editable mode (in controller or view)
+    # valid_from after valid_until
+    # error object that renders flash note
   end
 end

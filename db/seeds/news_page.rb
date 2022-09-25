@@ -13,27 +13,36 @@ end
 Scrivito::Workspace.use('Testing')
 puts 'Using Testing workspace'
 
+# Create a NewsIndexPage
+NewsIndexPage.create(title: 'News')
 # Create a valid page
 p = NewsPage.create(title: "Live")
-p.update(valid_from: Time.current - 1.day, valid_until: Time.current + 1.day, _path: "/live")
+p.update(valid_from: Time.current - 1.day, valid_until: Time.current + 1.day, _path: '/news/live')
 puts "Created live page"
+puts "Path: #{p.path}"
+
+p = NewsPage.create(title: "Live")
+p.update(valid_from: Time.current - 1.day, valid_until: Time.current + 1.day)
+puts "Created live page"
+puts "Path: #{p.path}"
 
 # Create an expired page
 p = NewsPage.create(title: "Expired")
-p.update(valid_from: Time.current - 2.days, valid_until: Time.current - 1.day, _path: "/expired")
+p.update(valid_from: Time.current - 2.days, valid_until: Time.current - 1.day)
 puts "Created expired page"
+puts "Path: #{p.path}"
 
 # Create a future page
 p = NewsPage.create(title: "Future")
-p.update(valid_from: Time.current + 1.day, valid_until: Time.current + 2.days, _path: "/future")
+p.update(valid_from: Time.current + 1.day, valid_until: Time.current + 2.days)
 puts "Created future page"
 
 # Create a page with no valid_from
 p = NewsPage.create(title: "No valid_from")
-p.update(valid_until: Time.current + 2.days, valid_from: nil, _path: "/no-valid-from")
+p.update(valid_until: Time.current + 2.days, valid_from: nil)
 puts "Created no valid_from page"
 
 # Create a page with no valid_until
 p = NewsPage.create(title: "No valid_until")
-p.update(valid_from: Time.current - 2.days, valid_until: nil, _path: "/no-valid-until")
+p.update(valid_from: Time.current - 2.days, valid_until: nil)
 puts "Created no valid_until page"
