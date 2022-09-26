@@ -12,6 +12,5 @@ class Page < Obj
   default_for :valid_until do
     Time.current + 1.year
   end
-    
   
 end

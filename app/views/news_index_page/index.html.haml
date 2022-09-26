@@ -4,9 +4,11 @@
 = scrivito_tag :h1, @obj, :title
 = form_tag(scrivito_path(@obj), method: :get) do
   %div
-    = text_field_tag 'q', @query, placeholder: 'Search'
+    = text_field_tag 'q', @query, placeholder: 'Search', id:'search'
     = button_tag 'Search', class: 'web_button green'
-    
+
+%ul#news
+
 - if @query.present? && @hits.empty?
   %h2 No Search Results
 - else

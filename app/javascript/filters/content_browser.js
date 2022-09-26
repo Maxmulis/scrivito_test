@@ -29,5 +29,5 @@ const loadFilters = () => {
     }
   });
 }
-
+console.log('hi');
 loadFilters();

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   scrivito_route '/', using: 'homepage'
   scrivito_route '(/)(*slug-):id', using: 'slug_id'
   scrivito_route '/test/*permalink', using: 'permalink', format: false
+
+  get '/suggestions', to: 'news_index_page#autocomplete', as: 'suggestions'
 end
