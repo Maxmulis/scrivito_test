@@ -2,6 +2,7 @@ class NewsIndexPageController < CmsController
   HITS_PER_PAGE = 10
 
   def index
+    @autocomplete_path = suggestions_url
     @query = params[:q] || ''
     @hits = []
 

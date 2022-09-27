@@ -2,10 +2,11 @@
 scrivito.on('load', () => {
     const search = document.getElementById('search');
     const news = document.getElementById('news');
+    const path = news.dataset.path
     // <%# extract query from search %>
     // <%# fetch suggestions from backend %>
     search.addEventListener('keyup', () => {
-      response = fetch(`http://localhost:3000/suggestions?q=${search.value}`)
+      response = fetch(`${path}?q=${search.value}`)
       .then((response) => response.json())
       .then((suggestions) => {
         // <%# clear ul-element %>

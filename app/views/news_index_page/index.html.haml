@@ -7,7 +7,7 @@
     = text_field_tag 'q', @query, placeholder: 'Search', id:'search'
     = button_tag 'Search', class: 'web_button green'
 
-%ul#news
+%ul#news{ data: { path: @autocomplete_path } }
 
 - if @query.present? && @hits.empty?
   %h2 No Search Results
