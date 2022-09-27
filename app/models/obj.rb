@@ -1,4 +1,6 @@
 class Obj < Scrivito::BasicObj
+  include ErrorHandler
+
   def method_missing(method, *args, &block)
     if method.to_s == 'hidden_from_navigation?'
       false
@@ -9,9 +11,5 @@ class Obj < Scrivito::BasicObj
 
   def respond_to_missing?(method, include_private = false)
     method.to_s == 'hidden_from_navigation?' || super
-  end
-
-  def slug
-    "test"
   end
 end

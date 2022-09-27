@@ -10,6 +10,7 @@
     = javascript_include_tag "application"
     = scrivito_head_tags
   %body
+    = render "errors"  if scrivito_in_editable_view?
     .container-fluid
       %nav.navbar.navbar-default{:role => "navigation"}
         .container-fluid

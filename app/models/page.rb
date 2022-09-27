@@ -12,5 +12,10 @@ class Page < Obj
   default_for :valid_until do
     Time.current + 1.year
   end
+
+  def determine_errors
+    super
+    add_error(message_key: "valid_from must be before valid_until") if valid_until && valid_from && valid_until.before?(valid_from)
+  end
   
 end
