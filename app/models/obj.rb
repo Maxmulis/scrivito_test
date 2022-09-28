@@ -1,4 +1,6 @@
 class Obj < Scrivito::BasicObj
+  include ErrorHandler
+
   def method_missing(method, *args, &block)
     if method.to_s == 'hidden_from_navigation?'
       false

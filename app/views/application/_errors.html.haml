@@ -1,0 +1,8 @@
+- obj_errors = @obj.errors
+-if obj_errors.present?
+  .alert.alert-danger
+    .alter-heading
+      Errors found:
+    %ul
+      -obj_errors.each do |error|
+        %li= error.message_key

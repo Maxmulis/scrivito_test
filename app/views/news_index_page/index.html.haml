@@ -1,0 +1,20 @@
+= scrivito_tag_list :ul, @obj, :toclist do |list, child|
+  = list.tag :li do
+    = link_to child.display_title, scrivito_path(child)
+= scrivito_tag :h1, @obj, :title
+= form_tag(scrivito_path(@obj), method: :get) do
+  %div
+    = text_field_tag 'q', @query, placeholder: 'Search', id:'search'
+    = button_tag 'Search', class: 'web_button green'
+
+%ul#news{ data: { path: @autocomplete_path } }
+
+- if @query.present? && @hits.empty?
+  %h2 No Search Results
+- else
+  - @hits.each do |hit|
+    %h3.search_hit
+      = link_to(hit[:title], scrivito_path(hit))
+
+= link_to 'previous page', @previous_page if @previous_page
+= link_to 'next page', @next_page if @next_page

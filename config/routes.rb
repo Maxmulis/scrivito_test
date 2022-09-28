@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # See the documentation of 'scrivito_route' for a detailed description.
   scrivito_route '/', using: 'homepage'
   scrivito_route '(/)(*slug-):id', using: 'slug_id'
-  scrivito_route '/*permalink', using: 'permalink', format: false
+  scrivito_route '/test/*permalink', using: 'permalink', format: false
 
-  post '/search', to: 'search_page#index', as: 'search'
+  get '/suggestions', to: 'news_index_page#autocomplete', as: 'suggestions'
 end
