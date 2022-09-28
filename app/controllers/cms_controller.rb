@@ -6,11 +6,11 @@ class CmsController < ApplicationController
     private
 
     def filters
-      render :not_found, status: 404 unless page_live? || scrivito_in_editable_view?
+      render :not_found, status: 404 unless page_publishable? || scrivito_in_editable_view?
     end
 
-    def page_live?
-      (@obj.valid_from && @obj.valid_from.before?(Time.current)) && (@obj.valid_until && @obj.valid_until.after?(Time.current))
+    def page_publishable?
+      @obj.no_errors?
     end
 
     # do not render :not_found if page is in editing mode
