@@ -17,4 +17,13 @@ module ErrorHandler
     @errors
   end
 
+  def errors?
+    errors
+    @errors.present?
+  end
+
+  def no_errors?
+    !errors?
+  end
+
 end
